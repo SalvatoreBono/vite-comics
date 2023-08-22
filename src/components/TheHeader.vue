@@ -1,5 +1,16 @@
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      headerLink: [
+        {
+          link: `Characters`,
+        },
+      ],
+    };
+  },
+  methods: {},
+};
 </script>
 
 <template>
@@ -15,35 +26,10 @@ export default {};
       </a>
       <div>
         <ul class="d-flex me-auto mb-2 mb-lg-0 list-unstyled">
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#">CHARACTERS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">COMICS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">MOVIES</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">TV</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">GAMES</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">COLLECTIBLES</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">VIDEOS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">FANS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">NEWS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">SHOP</a>
+          <li v-for="singleLink in headerLink" class="nav-item text-uppercase">
+            <a class="nav-link" aria-current="page" href="#">{{
+              singleLink.link
+            }}</a>
           </li>
         </ul>
       </div>
