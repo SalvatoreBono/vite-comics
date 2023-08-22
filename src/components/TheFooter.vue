@@ -16,6 +16,10 @@ export default {
           ],
         },
         {
+          title: `SHOP`,
+          credits: [`Shop DC`, `Shop DC Collectibles`],
+        },
+        {
           title: `DC`,
           credits: [
             `Terms of Use`,
@@ -41,10 +45,6 @@ export default {
             `DC Power Visa`,
           ],
         },
-        {
-          title: `SHOP`,
-          credits: [`Shop DC`, `Shop DC Collectibles`],
-        },
       ],
     };
   },
@@ -57,10 +57,10 @@ export default {
     <div class="bg-dc">
       <div class="container text-white">
         <div class="d-flex justify-content-between">
-          <div class="d-flex pt-5 pb-5">
+          <div class="d-flex pt-5 pb-5 flex-wrap flex-column footer-left">
             <div v-for="singleElement in listFooter" class="pe-4">
               <h4>{{ singleElement.title }}</h4>
-              <ul class="me-auto mb-2 mb-lg-0 list-unstyled text-white">
+              <ul class="me-auto mb-2 mb-lg-0 list-unstyled text-white pb-3">
                 <li
                   v-for="singleCredits in singleElement.credits"
                   class="nav-item"
@@ -107,8 +107,11 @@ export default {
   background-image: url(../assets/img/footer-bg.jpg);
   background-repeat: repeat-x;
 }
+.footer-left {
+  height: 450px;
+}
 h4 {
-  padding-bottom: 1rem;
+  padding-bottom: 0.5rem;
 }
 li {
   color: rgb(149, 149, 149);
