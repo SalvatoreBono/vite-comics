@@ -58,7 +58,7 @@ export default {
       <div class="container text-white">
         <div class="d-flex justify-content-between">
           <div class="d-flex pt-5 pb-5">
-            <div v-for="singleElement in listFooter" class="pe-5">
+            <div v-for="singleElement in listFooter" class="pe-4">
               <h4>{{ singleElement.title }}</h4>
               <ul class="me-auto mb-2 mb-lg-0 list-unstyled text-white">
                 <li
