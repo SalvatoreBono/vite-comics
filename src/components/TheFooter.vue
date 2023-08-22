@@ -1,5 +1,55 @@
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      listFooter: [
+        {
+          title: `DC COMICS`,
+          credits: [
+            `Character`,
+            `Comics`,
+            `Movies`,
+            `TV`,
+            `Games`,
+            `Videos`,
+            `News`,
+          ],
+        },
+        {
+          title: `DC`,
+          credits: [
+            `Terms of Use`,
+            `Privacy policy (New)`,
+            `Ad Choices`,
+            `Advertising`,
+            `Jobs`,
+            `Subscriptioons`,
+            `Talent WorkShops`,
+            `CPSC Certificates`,
+            `Ratings`,
+            `Shop Help`,
+            `Contact US`,
+          ],
+        },
+        {
+          title: `SITES`,
+          credits: [
+            `DC`,
+            `MAD Magazine`,
+            `DC Kids`,
+            `DC Universe`,
+            `DC Power Visa`,
+          ],
+        },
+        {
+          title: `SHOP`,
+          credits: [`Shop DC`, `Shop DC Collectibles`],
+        },
+      ],
+    };
+  },
+  methods: {},
+};
 </script>
 
 <template>
@@ -8,102 +58,16 @@ export default {};
       <div class="container text-white">
         <div class="d-flex justify-content-between">
           <div class="d-flex pt-5 pb-0">
-            <div class="pe-5">
-              <h4>DC COMICS</h4>
+            <div v-for="singleElement in listFooter" class="pe-5">
+              <h4>{{ singleElement.title }}</h4>
               <ul class="me-auto mb-2 mb-lg-0 list-unstyled text-white">
-                <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="#"
-                    >Characters</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Comics</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Movies</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">TV</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Games</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Videos</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">News</a>
-                </li>
-              </ul>
-              <div class="pe-0 pt-4 pb-5">
-                <h4>SHOP</h4>
-                <ul class="me-auto mb-2 mb-lg-0 list-unstyled text-white">
-                  <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">Shop DC</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Shop DC Collectibles</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="pe-5">
-              <h4>DC</h4>
-              <ul class="me-auto mb-2 mb-lg-0 list-unstyled text-white">
-                <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="#"
-                    >Terms of Use</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Privacy policy (New)</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Ad Choices</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Advertising</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Jobs</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Subcriptions</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Talent WorkShops</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">CPSC Certificates</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Ratings</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Shop Help</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Contact Us</a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4>SITES</h4>
-              <ul class="me-auto mb-2 mb-lg-0 list-unstyled text-white">
-                <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="#">DC</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">MAD Magazine</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">DC Kids</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">DC Universe</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">DC Power Visa</a>
+                <li
+                  v-for="singleCredits in singleElement.credits"
+                  class="nav-item"
+                >
+                  <a class="nav-link" aria-current="page" href="#">{{
+                    singleCredits
+                  }}</a>
                 </li>
               </ul>
             </div>

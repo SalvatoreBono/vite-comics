@@ -1,50 +1,42 @@
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      titleImg: [
+        {
+          title: `digital comics`,
+          img: `buy-comics-digital-comics.png`,
+        },
+        {
+          title: `dc merchandise`,
+          img: `buy-comics-merchandise.png`,
+        },
+        {
+          title: `subscription`,
+          img: `buy-comics-subscriptions.png`,
+        },
+        {
+          title: `comic shop locator`,
+          img: `buy-comics-shop-locator.png`,
+        },
+        {
+          title: `dc power visa`,
+          img: `buy-comics-subscriptions.png`,
+        },
+      ],
+    };
+  },
+  methods: {},
+};
 </script>
 
 <template>
   <div class="bg-main-bottom">
     <div class="container text-white pt-5 pb-5">
       <div class="main-bottom">
-        <div class="d-flex align-items-center">
-          <img
-            class="pe-3"
-            src="../assets/img/buy-comics-digital-comics.png"
-            alt=""
-          />
-          <div>DIGITAL COMICS</div>
-        </div>
-        <div class="d-flex align-items-center">
-          <img
-            class="pe-3"
-            src="../assets/img/buy-comics-merchandise.png"
-            alt=""
-          />
-          <div>DC MERCHANDISE</div>
-        </div>
-        <div class="d-flex align-items-center">
-          <img
-            class="pe-3"
-            src="../assets/img/buy-comics-subscriptions.png"
-            alt=""
-          />
-          <div>SUBSCRIPTION</div>
-        </div>
-        <div class="d-flex align-items-center">
-          <img
-            class="pe-3"
-            src="../assets/img/buy-comics-shop-locator.png"
-            alt=""
-          />
-          <div>COMIC SHOP LOCATOR</div>
-        </div>
-        <div class="d-flex align-items-center">
-          <img
-            class="pe-3"
-            src="../assets/img/buy-comics-shop-locator.png"
-            alt=""
-          />
-          <div>DC POWER VISA</div>
+        <div v-for="singleImg in titleImg" class="d-flex align-items-center">
+          <img class="pe-3" :src="`/src/assets/img/${singleImg.img}`" alt="" />
+          <div class="text-uppercase">{{ singleImg.title }}</div>
         </div>
       </div>
     </div>

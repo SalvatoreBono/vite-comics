@@ -4,7 +4,34 @@ export default {
     return {
       headerLink: [
         {
-          link: `Characters`,
+          link: `characters`,
+        },
+        {
+          link: `comics`,
+        },
+        {
+          link: `movies`,
+        },
+        {
+          link: `tv`,
+        },
+        {
+          link: `games`,
+        },
+        {
+          link: `collectibles`,
+        },
+        {
+          link: `videos`,
+        },
+        {
+          link: `fans`,
+        },
+        {
+          link: `news`,
+        },
+        {
+          link: `shop`,
         },
       ],
     };
