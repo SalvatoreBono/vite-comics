@@ -1,13 +1,16 @@
 <script>
+import TheCard from "../components/TheCards.vue";
 import dcComics from "../db/dc-comics.json";
+
 export default {
   data() {
     return {
       dcComics,
     };
   },
-  methods: {},
-  mounted() {},
+  components: {
+    TheCard,
+  },
 };
 </script>
 
@@ -21,10 +24,11 @@ export default {
       <div class="pt-5 text-white pb-3">
         <div class="row row-cols-6 gy-5">
           <div v-for="singleComics in dcComics" class="col pb-5">
-            <img :src="`${singleComics.thumb}`" alt="" />
-            <div class="pt-3 text-uppercase">{{ singleComics.series }}</div>
+            <TheCard
+              :img-src="singleComics.thumb"
+              :series-title="singleComics.series"
+            ></TheCard>
           </div>
-
           <button
             type="button"
             class="btn btn-primary m-auto mt-5 rounded-0 fw-bold"
